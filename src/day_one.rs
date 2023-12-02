@@ -1,5 +1,9 @@
+#[path = "./utils.rs"]
+mod utils;
+use utils::read_input;
+
 pub fn main() {
-    let input_file_contents = read_input_file("./input/day_one.txt");
+    let input_file_contents = read_input("day_one");
     let sum = sum_calibration_numbers(input_file_contents);
     println!("sum: {}", sum);
 }
@@ -27,12 +31,6 @@ fn get_calibration_number_from_line(input: &str) -> i32 {
     let last_digit: i32 = get_text_last_digit(input);
     let calibration_digit: i32 = format!("{}{}", first_digit, last_digit).parse().unwrap();
     return calibration_digit;
-}
-
-fn read_input_file(filepath: &str) -> String {
-    let file_contents =
-        std::fs::read_to_string(filepath).expect("Unable to read file");
-    return file_contents;
 }
 
 fn sum_calibration_numbers(text: String) -> i32 {
@@ -87,7 +85,7 @@ mod tests {
 
     #[test]
     fn test_sum_calibration_numbers() {
-        let test_file_contents = read_input_file("./input/day_one_test.txt");
+        let test_file_contents = read_input("day_one_test");
         assert_eq!(sum_calibration_numbers(test_file_contents), 142);
     }
 }
