@@ -48,6 +48,7 @@ fn sum_calibration_spelled_numbers(text: String) -> i32 {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use utils::Part;
 
     #[test]
     fn test_get_calibration_digit_from_line() {
@@ -81,13 +82,13 @@ mod tests {
 
     #[test]
     fn test_sum_calibration_digits() {
-        let test_file_contents = utils::read_test_input(Day::One, utils::Part::One);
+        let test_file_contents = utils::read_test_input(Day::One, Part::One);
         assert_eq!(sum_calibration_digits(test_file_contents), 142);
     }
 
     #[test]
     fn test_sum_calibration_spelled_numbers() {
-        let test_file_contents = utils::read_test_input(Day::One, utils::Part::Two);
+        let test_file_contents = utils::read_test_input(Day::One, Part::Two);
         assert_eq!(sum_calibration_spelled_numbers(test_file_contents), 281);
     }
 }
