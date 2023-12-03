@@ -1,16 +1,16 @@
 #[path = "./utils.rs"]
 mod utils;
 
-use utils::DAY_ONE;
+use utils::Day;
 use utils::DIGITS_PATTERN;
-use utils::SPELLED_NUMBERS_PATTERN;
 use utils::REVERSE_SPELLED_NUMBERS_PATTERN;
+use utils::SPELLED_NUMBERS_PATTERN;
 
 pub fn main() {
-    let input = utils::read_input(DAY_ONE);
+    let input = utils::read_input(Day::One);
     let sum_part_one = sum_calibration_digits(input.clone());
     let sum_part_two = sum_calibration_spelled_numbers(input);
-    utils::print_day(DAY_ONE, sum_part_one, sum_part_two);
+    utils::print_day(Day::One, sum_part_one, sum_part_two);
 }
 
 fn get_calibration_digit_from_line(input: &str) -> i32 {
@@ -81,13 +81,13 @@ mod tests {
 
     #[test]
     fn test_sum_calibration_digits() {
-        let test_file_contents = utils::read_test_input(DAY_ONE, utils::PART_ONE);
+        let test_file_contents = utils::read_test_input(Day::One, utils::Part::One);
         assert_eq!(sum_calibration_digits(test_file_contents), 142);
     }
 
     #[test]
     fn test_sum_calibration_spelled_numbers() {
-        let test_file_contents = utils::read_test_input(DAY_ONE, utils::PART_TWO);
+        let test_file_contents = utils::read_test_input(Day::One, utils::Part::Two);
         assert_eq!(sum_calibration_spelled_numbers(test_file_contents), 281);
     }
 }
