@@ -10,8 +10,7 @@ pub fn main() {
     let input = utils::read_input(DAY_ONE);
     let sum_part_one = sum_calibration_digits(input.clone());
     let sum_part_two = sum_calibration_spelled_numbers(input);
-    println!("part one: {}", sum_part_one);
-    println!("part two: {}", sum_part_two);
+    utils::print_day(DAY_ONE, sum_part_one, sum_part_two);
 }
 
 fn get_calibration_digit_from_line(input: &str) -> i32 {

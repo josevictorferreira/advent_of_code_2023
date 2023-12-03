@@ -110,3 +110,10 @@ pub fn get_text_last_ocurrence(input: &str, reverse_pattern: &str) -> i32 {
         None => panic!("Could not convert {} to number", first_match),
     };
 }
+
+pub fn print_day(day_num: i32, part_one: i32, part_two: i32) {
+    println!("-------------------------");
+    println!("#### Day {} ####", day_num);
+    println!("Part one: {}", part_one);
+    println!("Part two: {}", part_two);
+}
